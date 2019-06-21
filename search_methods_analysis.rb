@@ -2,7 +2,12 @@ require_relative "cosine_similarity"
 
 def test_method(method_name, vector_size = 300, num_tests = 10000)
   name = method_name.to_s
-  puts "Testing two vectors of shape [1 x #{vector_size}] with #{name} and #{num_tests} tests"
+  puts
+  puts "################################################"
+  puts "BEGIN: Testing two vectors using #{name}"
+  puts "SHAPE: [1 x #{vector_size}]"
+  puts "TESTS: #{num_tests} tests"
+  puts
 
   times = []
   num_tests.times do |i|
@@ -18,10 +23,14 @@ def test_method(method_name, vector_size = 300, num_tests = 10000)
 
   average_elapsed = times.sum/num_tests
 
-  puts "Completed #{num_tests} tests"
   puts "Total completion time: #{times.sum} seconds"
   puts "Average completion time: #{average_elapsed} seconds"
+  puts
+  puts "END: Finished testing #{name}"
+  puts "################################################"
 
+  puts
+  puts
 end
 
 
